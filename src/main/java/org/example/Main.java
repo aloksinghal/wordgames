@@ -61,14 +61,14 @@ public class Main {
         wordQuerier.addState(gameId, letterInfos2);
         System.out.println(wordQuerier.getNextSetOfValidGuesses(gameId));
 
-        Set<Character> left = Stream.of('v','r','o').collect(Collectors.toSet());
-        Set<Character> right = Stream.of('w','a','l').collect(Collectors.toSet());
-        Set<Character> down = Stream.of('e','t','h').collect(Collectors.toSet());
-        Set<Character> up = Stream.of('b','d','i').collect(Collectors.toSet());
+        Set<Character> left = Stream.of('i','h','t').collect(Collectors.toSet());
+        Set<Character> right = Stream.of('d','y','l').collect(Collectors.toSet());
+        Set<Character> down = Stream.of('n','x','c').collect(Collectors.toSet());
+        Set<Character> up = Stream.of('o','a','e').collect(Collectors.toSet());
         LetterBoxRequest letterBoxRequest = new LetterBoxRequest(left, right, down, up);
         LetterBoxSolver letterBoxSolver = new LetterBoxSolver();
         List<List<String>> solutions = new ArrayList<>();
-       //solutions =  letterBoxSolver.solveInNWords(2, letterBoxRequest);
+       solutions =  letterBoxSolver.solveInNWords(2, letterBoxRequest);
         if (solutions.isEmpty()) {
             solutions = letterBoxSolver.solveInNWords(3, letterBoxRequest);
         }

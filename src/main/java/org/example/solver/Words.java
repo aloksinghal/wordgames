@@ -10,7 +10,7 @@ public class Words {
     public static List<String> getFiveLetterWords() {
         Scanner s = null;
         try {
-            s = new Scanner(new File("/home/alok/personal/words/src/wordlist.txt"));
+            s = new Scanner(new File("/Users/aloksinghal/personal/wordgames/src/wordlist.txt"));
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -25,7 +25,7 @@ public class Words {
     public static List<String> getWordsGreaterThan(int n) {
         Scanner s = null;
         try {
-            s = new Scanner(new File("/home/alok/personal/words/src/wordlist.txt"));
+            s = new Scanner(new File("/Users/aloksinghal/personal/wordgames/src/wordlist.txt"));
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
