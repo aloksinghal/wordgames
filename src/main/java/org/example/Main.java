@@ -1,6 +1,5 @@
 package org.example;
 
-import org.example.solver.DfsSolver;
 import org.example.solver.letterboxed.LetterBoxRequest;
 import org.example.solver.letterboxed.LetterBoxSolver;
 import org.example.solver.spellingbee.SpellingBee;
@@ -10,7 +9,6 @@ import org.example.solver.wordle.WordQuerier;
 import org.example.solver.wordle.WordQuerierImpl;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -18,13 +16,6 @@ import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
-        int[] parent = new int[] {-1,4,4,9,0,9,5,5,2,2,2};
-       /*boolean[] results = DfsSolver.findAnswer(parent,"jjjehhhcced");
-        for (int i = 0; i < results.length; i++) {
-            System.out.println(results[i]);
-        }
-        */
-
         List<Character> characters = new ArrayList<>();
         characters = Stream.of('x','u','a','c','h','e').collect(Collectors.toList());
         SpellingBeeRequest spellingBeeRequest = new SpellingBeeRequest('t',characters);
