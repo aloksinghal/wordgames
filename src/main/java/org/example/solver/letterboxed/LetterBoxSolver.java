@@ -1,10 +1,10 @@
 package org.example.solver.letterboxed;
 
-import org.example.solver.Words;
-
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import org.example.utilities.Words;
 
 public class LetterBoxSolver {
 

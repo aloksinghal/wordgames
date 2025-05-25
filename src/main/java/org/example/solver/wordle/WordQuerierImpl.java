@@ -1,9 +1,9 @@
 package org.example.solver.wordle;
 
-import org.example.solver.Words;
-
 import java.util.*;
 import java.util.stream.Collectors;
+
+import org.example.utilities.Words;
 
 public class WordQuerierImpl implements WordQuerier {
     public WordQuerierImpl() {

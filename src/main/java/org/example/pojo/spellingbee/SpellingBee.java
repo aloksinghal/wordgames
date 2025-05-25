@@ -1,13 +1,13 @@
-package org.example.solver.spellingbee;
+package org.example.pojo.spellingbee;
 
 import java.util.List;
 
-public class SpellingBeeRequest {
+public class SpellingBee {
     private Character centreLetter;
 
     private List<Character> otherLetters;
 
-    public SpellingBeeRequest(Character centreLetter, List<Character> otherLetters) {
+    public SpellingBee(Character centreLetter, List<Character> otherLetters) {
         this.centreLetter  = centreLetter;
         this.otherLetters = otherLetters;
     }

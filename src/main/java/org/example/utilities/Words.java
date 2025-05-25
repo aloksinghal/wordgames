@@ -1,4 +1,4 @@
-package org.example.solver;
+package org.example.utilities;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -35,6 +35,21 @@ public class Words {
         }
         s.close();
         return list.stream().filter(word -> word.length() > n).collect(Collectors.toList());
+    }
+
+    public static List<String> getWordsWithNUniqueLetters(int n) {
+        Scanner s = null;
+        try {
+            s = new Scanner(new File("/Users/alok/projects/wordgames/src/wordlist.txt"));
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        ArrayList<String> list = new ArrayList<String>();
+        while (s.hasNext()){
+            list.add(s.next());
+        }
+        s.close();
+        return list.stream().filter(word -> word.chars().distinct().count() == n).collect(Collectors.toList());
     }
 
 }

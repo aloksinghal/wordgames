@@ -1,9 +1,10 @@
 package org.example;
 
+import org.example.generator.spellingbee.SpellingBeeGenerator;
+import org.example.pojo.spellingbee.SpellingBee;
 import org.example.solver.letterboxed.LetterBoxRequest;
 import org.example.solver.letterboxed.LetterBoxSolver;
-import org.example.solver.spellingbee.SpellingBee;
-import org.example.solver.spellingbee.SpellingBeeRequest;
+import org.example.solver.spellingbee.SpellingBeeSolve;
 import org.example.solver.wordle.LetterInfo;
 import org.example.solver.wordle.WordQuerier;
 import org.example.solver.wordle.WordQuerierImpl;
@@ -17,13 +18,12 @@ import java.util.stream.Stream;
 public class Main {
     public static void main(String[] args) {
         List<Character> characters = new ArrayList<>();
-        characters = Stream.of('x','u','a','c','h','e').collect(Collectors.toList());
-        SpellingBeeRequest spellingBeeRequest = new SpellingBeeRequest('t',characters);
-        SpellingBee spellingBee = new SpellingBee();
-        List<String> answers = spellingBee.getWords(spellingBeeRequest);
+        SpellingBeeGenerator spellingBeeGenerator = new SpellingBeeGenerator();
+        SpellingBeeSolve spellingBee = new SpellingBeeSolve();
+        List<String> answers = spellingBee.getWords(spellingBeeGenerator.generateSpellingBee());
         System.out.println(answers);
 
-        WordQuerier wordQuerier = new WordQuerierImpl();
+       /*  WordQuerier wordQuerier = new WordQuerierImpl();
         String gameId = wordQuerier.initGame();
         List<LetterInfo> letterInfos = new ArrayList<>();
         letterInfos.add(new LetterInfo('c',0,1));
@@ -64,6 +64,6 @@ public class Main {
             solutions = letterBoxSolver.solveInNWords(3, letterBoxRequest);
         }
         System.out.println(solutions);
-        System.out.println("Hello world!");
+        System.out.println("Hello world!"); */
     }
 }
